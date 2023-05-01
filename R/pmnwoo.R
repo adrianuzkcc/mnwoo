@@ -1,24 +1,34 @@
 #counties <- c("Winona","Wabasha")
 #townships <- c("Rock Dell","High Forest","Glasgow","Fountain","Sumner","Lewiston","Dakota", "Homer")
 
+#' Title
+#'
+#' @param counties this is an analysis at county level
+#' @param townships analysis at township level
+#'
+#' @return one dataframe
+#' @export
+#'
+#' @examples x<-1
+#'
 pmnwoo <- function(counties, townships) {
-  if (!require("pacman")) install.packages("pacman"); library(pacman)
-  pacman::p_load("data.table", "Rmisc","ggplot2",
-                 "corrplot","ggpubr","dplyr","gtools","ggthemes",
-                 "tidyr","viridis",
-                 "rgdal","sp","maptools","spdplyr",
-                 "rmapshaper","rgdal","maptools",
-                 "data.table","remotes",
-                 "nngeo","modeest","dtplyr","sf",
-                 "ggmap","kableExtra","gridExtra", "grid", "flextable", "jpeg", "png", "RCurl")
-  library(sf)
-  library(tidyr)
-  library(ggplot2)
-  library(gridExtra)
-  library(grid)
-  library(flextable)
-  library(png)
-  library(RCurl)
+  # if (!require("pacman")) install.packages("pacman"); library(pacman)
+  # pacman::p_load("data.table", "Rmisc","ggplot2",
+  #                "corrplot","ggpubr","dplyr","gtools","ggthemes",
+  #                "tidyr","viridis",
+  #                "rgdal","sp","maptools","spdplyr",
+  #                "rmapshaper","rgdal","maptools",
+  #                "data.table","remotes",
+  #                "nngeo","modeest","dtplyr","sf",
+  #                "ggmap","kableExtra","gridExtra", "grid", "flextable", "jpeg", "png", "RCurl")
+  # library(sf)
+  # library(tidyr)
+  # library(ggplot2)
+  # library(gridExtra)
+  # library(grid)
+  # library(flextable)
+  # library(png)
+  # library(RCurl)
 
   load("~/mnwoo/data/final_df.rda")
   final_df <- sf::st_transform(final_df, "+init=epsg:26915")
